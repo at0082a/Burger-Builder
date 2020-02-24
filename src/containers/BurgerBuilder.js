@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Aux from '../hoc/Aux';
 import Burger from '../components/Burger';
+import BuildControls from '../components/BuildControls';
 
 function burgerBuilder(props) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -12,7 +13,7 @@ function burgerBuilder(props) {
   return (
     <Aux>
       <Burger ingredients={ingredients}/>
-      <div> Build Controls </div>
+      <BuildControls/>
     </Aux>
   )
 };
