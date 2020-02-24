@@ -1,4 +1,5 @@
 import React from 'react';
+import './BurgerIngredients.css';
 
 const burgerIngredient = props => {
   let ingredient = null;
@@ -27,7 +28,7 @@ const burgerIngredient = props => {
     case 'bacon':
       ingredient = <div className='bacon'></div>
       break;
-      
+
     default: ingredient = null
   };
   return ingredient
