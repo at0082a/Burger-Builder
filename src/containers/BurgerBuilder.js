@@ -15,20 +15,20 @@ const INGREDIENT_PRICES = {
 function burgerBuilder(props) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [ingredients, setIngredients] = useState({
-      ingredients: { salad: 0, bacon: 0, cheese: 0, meat: 0 } 
+      ingredients: { salad: 0 , bacon: 0 , cheese: 0, meat: 0 } 
     }
   );
-
   const [total, setTotal] = useState(4);
 
 const addIngredient = (type) => {
-  let ingredient = ingredients[type];
+  let ingredient = ingredients.ingredients[type];
+  console.log('typpeeee', ingredient);
   let newCount = ingredient + 1;
-  ingredients[type] = newCount;
-  let oldPrice = total;
-  const newPrice = oldPrice + INGREDIENT_PRICES[type];
-  setTotal(newPrice);
-  setIngredients(ingredients);
+  ingredients.ingredients[type] = newCount;
+  setTotal(prevState => prevState + INGREDIENT_PRICES[type]);
+  setIngredients(prevState => {
+    return {...prevState, ...ingredients}
+  });
 };
 
 const removeIngredient = (type) => {
@@ -43,7 +43,7 @@ const removeIngredient = (type) => {
 
   return (
     <Aux>
-      <Burger ingredients={ingredients}/>
+      <Burger ingredients={ingredients} total={total} />
       <BuildControls remove={removeIngredient} add={addIngredient} />
     </Aux>
   )
