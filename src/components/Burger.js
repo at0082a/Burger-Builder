@@ -3,9 +3,9 @@ import BurgerIngredient from "./BurgerIngredient";
 import './Burger.css';
 
 const burger = (props) => {
-  let transformedIngredients = Object.keys(props.ingredients.ingredients)
+  let transformedIngredients = Object.keys(props.ingredients)
     .map(igKey => {  
-      return [...Array(props.ingredients.ingredients[igKey])].map((_, i) => {
+      return [...Array(props.ingredients[igKey])].map((_, i) => {
         return <BurgerIngredient key={igKey + i} type={igKey} />
       });
   })
@@ -22,7 +22,6 @@ const burger = (props) => {
       <BurgerIngredient type='bread-top'/>
         {transformedIngredients}
       <BurgerIngredient type='bread-bottom'/>
-      {props.total}
     </div>
   )
 }
