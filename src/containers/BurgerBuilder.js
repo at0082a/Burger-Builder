@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import Aux from '../hoc/Aux';
 import Burger from '../components/Burger';
 import BuildControls from '../components/BuildControls';
-
+import Modal from '../components/UI/Modal';
+import OrderSummary from '../components/OrderSummary';
 
 const INGREDIENT_PRICES = {
   salad: 1,
@@ -19,6 +20,7 @@ function burgerBuilder(props) {
   );
   const [total, setTotal] = useState(4);
   const [purchaseState, setPurchaseState] = useState(false);
+  const [order, setOrder] = useState(false);
 
 const addIngredient = (type) => {
   let newIngs = {...ingredients}
@@ -29,6 +31,18 @@ const addIngredient = (type) => {
   setIngredients(prevState => {
     return {...prevState, ...newIngs}
   });
+};
+
+const purchaseStateHandler = () => {
+  if (total > 4) {
+    setPurchaseState(true);
+  } else if (total === 4) {
+    setPurchaseState(false);
+  }
+};
+
+const orderHandler = () => {
+  setOrder(true);
 };
 
 const removeIngredient = (type) => {
@@ -54,20 +68,24 @@ for (let key in disabledInfo) {
 
 let state = purchaseState
 if (total === 4) {
-  state = true
+  state = true;
 } else if (total === 4) {
-  state = false
+  state = false;
 }
 
   return (
     <Aux>
+      <Modal show={state}>
+        <OrderSummary ingredients={ingredients}/>
+      </Modal>
       <Burger ingredients={ingredients} />
       <BuildControls 
         remove={removeIngredient} 
         add={addIngredient}
         disabled={disabledInfo} 
         total={total} 
-        purchasable={state}
+        purchasable={purchaseStateHandler}
+        order={orderHandler}
       />
     </Aux>
   )
