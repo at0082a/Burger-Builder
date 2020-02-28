@@ -19,7 +19,6 @@ function burgerBuilder(props) {
       { salad: 0 , bacon: 0 , cheese: 0, meat: 1 } 
   );
   const [total, setTotal] = useState(4);
-  const [purchaseState, setPurchaseState] = useState(false);
   const [order, setOrder] = useState(false);
 
 const addIngredient = (type) => {
@@ -31,14 +30,6 @@ const addIngredient = (type) => {
   setIngredients(prevState => {
     return {...prevState, ...newIngs}
   });
-};
-
-const purchaseStateHandler = () => {
-  if (total > 4) {
-    setPurchaseState(true);
-  } else if (total === 4) {
-    setPurchaseState(false);
-  }
 };
 
 const orderHandler = () => {
@@ -66,17 +57,17 @@ for (let key in disabledInfo) {
   }
 }
 
-let state = purchaseState
+let purchasable;
 if (total === 4) {
-  state = true;
-} else if (total === 4) {
-  state = false;
+  purchasable = true
+} else if (total > 4) {
+  purchasable = false
 }
 
   return (
     <Aux>
-      <Modal show={state}>
-        <OrderSummary ingredients={ingredients}/>
+      <Modal show={order}>
+        <OrderSummary ingredients={ingredients} total={total}/>
       </Modal>
       <Burger ingredients={ingredients} />
       <BuildControls 
@@ -84,7 +75,7 @@ if (total === 4) {
         add={addIngredient}
         disabled={disabledInfo} 
         total={total} 
-        purchasable={purchaseStateHandler}
+        purchasable={purchasable}
         order={orderHandler}
       />
     </Aux>
