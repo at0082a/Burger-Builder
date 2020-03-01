@@ -36,6 +36,10 @@ const orderHandler = () => {
   setOrder(true);
 };
 
+const clickHandler = () => {
+  setOrder(false);
+};
+
 const removeIngredient = (type) => {
   let newIngs = {...ingredients};
   let ingredient = newIngs[type];
@@ -63,10 +67,10 @@ if (total === 4) {
 } else if (total > 4) {
   purchasable = false
 }
-
+console.log(order);
   return (
     <Aux>
-      <Modal show={order}>
+      <Modal show={order} clicked={clickHandler}>
         <OrderSummary ingredients={ingredients} total={total}/>
       </Modal>
       <Burger ingredients={ingredients} />
