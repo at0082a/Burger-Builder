@@ -4,7 +4,7 @@ import BackDrop from './BackDrop';
 import Aux from '../../hoc/Aux';
 
 const modal = (props) => {
-  console.log(props.show);
+  console.log(props.clicked);
   return (
     <Aux>
       <BackDrop show={props.show} clicked={props.clicked}/>

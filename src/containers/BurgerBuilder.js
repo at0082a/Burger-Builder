@@ -71,7 +71,7 @@ console.log(order);
   return (
     <Aux>
       <Modal show={order} clicked={clickHandler}>
-        <OrderSummary ingredients={ingredients} total={total}/>
+        <OrderSummary ingredients={ingredients} clicked={clickHandler} total={total}/>
       </Modal>
       <Burger ingredients={ingredients} />
       <BuildControls 
