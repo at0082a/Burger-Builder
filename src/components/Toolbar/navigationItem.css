@@ -1,5 +1,4 @@
 .navigationItem {
-  display: flex;
   background-color: green;
   height: 100%;
   margin: 0;
@@ -7,19 +6,19 @@
   align-items: center
 }
 
-.navigationItem a:hover {
+.navigationItem a {
   color: white;
   text-decoration: none;
   height: 100%;
   border-bottom: 4px solid transparent;
   padding: 16px 10px;
   box-sizing: border-box;
-  display: inline-block
+  display: block
 }
 
 .navigationItem a:hover,
 .navigationItem a:active,
-.navigationItem a:active {
+.navigationItem a.active {
   background-color: lightgreen;
   color: black;
   border-bottom: 4px solid #40A4C8;
