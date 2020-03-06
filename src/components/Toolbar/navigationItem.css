@@ -1,17 +1,15 @@
 .navigationItem {
   background-color: green;
-  height: 100%;
-  margin: 0;
+  display: block;
+  width: 100%;
+  margin: 10px 0;
   box-sizing: border-box;
-  align-items: center
 }
 
 .navigationItem a {
   color: white;
   text-decoration: none;
-  height: 100%;
-  border-bottom: 4px solid transparent;
-  padding: 16px 10px;
+  width: 100%;
   box-sizing: border-box;
   display: block
 }
@@ -19,7 +17,32 @@
 .navigationItem a:hover,
 .navigationItem a:active,
 .navigationItem a.active {
-  background-color: lightgreen;
-  color: black;
-  border-bottom: 4px solid #40A4C8;
+  color: black
+}
+
+@media(min-width: 500px) {
+  .navigationItem {
+    background-color: green;
+    height: 100%;
+    display: flex;
+    width: auto;
+    margin: 0;
+    align-items: center
+  }
+  
+  .navigationItem a {
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    padding: 16px 10px;
+    display: block
+  }
+  
+  .navigationItem a:hover,
+  .navigationItem a:active,
+  .navigationItem a.active {
+    background-color: lightgreen;
+    color: black;
+    border-bottom: 4px solid #40A4C8;
+  }
 }

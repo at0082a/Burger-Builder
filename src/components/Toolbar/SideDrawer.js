@@ -1,13 +1,12 @@
 import React from 'react';
 import Logo from './logo';
 import NavigationItems from './NavigationItems';
-import './sidedrawer.css';
+import './sidedrawer.css'
 
 const sideDrawer = (props) => {
-  
   return (
     <div className='sideDrawer'>
-      <Logo height='11%'/>
+      <Logo height='11%' marginBottom='32px'/>
       <nav>
         <NavigationItems />
       </nav>
