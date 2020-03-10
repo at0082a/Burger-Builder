@@ -5,13 +5,11 @@ import BurgerBuilder from './containers/BurgerBuilder';
 
 const App = () => {
   return (
-    <>
-    <div className="App">
+    <div>
       <Layout>
         <BurgerBuilder/>
       </Layout>
     </div>
-    </>
   );
 }
 

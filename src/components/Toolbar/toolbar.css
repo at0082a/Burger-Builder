@@ -4,12 +4,13 @@
   color: white;
   align-items: center;
   height: 56px;
-  position: fixed;
+  /* position: fixed; */
   justify-content: space-between;
   width: 100%;
   z-index: 90;
-  padding: 0 20px;
-  box-sizing: border-box
+  /* padding: 0 20px; */
+  box-sizing: border-box;
+  margin-bottom: 100px; 
 }
 
 .toolbar nav {

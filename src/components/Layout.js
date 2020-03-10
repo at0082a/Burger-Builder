@@ -2,25 +2,29 @@ import React, { useState } from 'react';
 import Aux from '../hoc/Aux';
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './Toolbar/SideDrawer';
+import Backdrop from './UI/BackDrop';
 import './Layout.css';
 
 function layout(props) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  // const [open, setOpen] = useState(false);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [showDrawer, setShowDrawer] = useState(true);
+
+  const show = () => {
+    setShowDrawer(false);
+  };
+
   // const clicked = () => {
   //   setOpen(!open);
   // };
 
   return (  
     <Aux>
-      <div className='content'>
-        <Toolbar/>
-        <SideDrawer/>
-        Backdrop 
-      </div>
-      <main>
-        { props.children }
-      </main>
+      <Toolbar/>
+      <SideDrawer clicked={show} show={showDrawer}/>
+      <main className='content'>
+       { props.children }
+     </main>
     </Aux>
   )
 }

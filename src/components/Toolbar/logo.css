@@ -1,12 +1,17 @@
 .logo {
   /* height: 85%; */
   padding: 3px;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 10%;
   box-sizing: border-box;
 }
 
 .logo img {
   height: 100%;
-  /* width: 95%  */
+}
+
+@media(max-width: 499px) {
+  .logo {
+    background-color: transparent;
+  }
 }
