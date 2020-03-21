@@ -1,7 +1,7 @@
 import React from 'react';
 import BuildControl from "./BuildControl";
-import './buildControls.css';
-import './orderButton.css';
+import styles from './BuildControls.module.css';
+import classes from './OrderButton.module.css';
 
 const controls = [
   {label: 'Salad', type: 'salad'},
@@ -24,10 +24,10 @@ const buildControls = props => {
   });
 
   return (
-    <div className='buildControls'>
+    <div className={styles.BuildControls}>
       <p> Current Price: ${props.total.toFixed(2)} </p>
         {buildControl}
-      <button className="orderButton" disabled={props.purchasable} onClick={props.order}> ORDER NOW </button>
+      <button className={classes.OrderButton} disabled={props.purchasable} onClick={props.order}> ORDER NOW </button>
     </div>
   )
 };

@@ -1,4 +1,4 @@
-.sideDrawer {
+.SideDrawer {
   position: fixed;
   width: 280px;
   max-width: 70%;
@@ -12,15 +12,15 @@
   z-index: 100;
 }
 @media(min-width: 500px) {
-  .sideDrawer {
+  .SideDrawer {
     display: none
   }
 }
 
-.open {
+.Open {
   transform: translateX(0)
 }
 
-.close {
+.Close {
   transform: translateX(-100)
 }

@@ -3,7 +3,7 @@ import Aux from '../hoc/Aux';
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './Toolbar/SideDrawer';
 import Backdrop from './UI/BackDrop';
-import './Layout.css';
+import classes from './Layout.module.css';
 
 function layout(props) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -14,15 +14,11 @@ function layout(props) {
     setShowDrawer(false);
   };
 
-  // const clicked = () => {
-  //   setOpen(!open);
-  // };
-
   return (  
     <Aux>
       <Toolbar/>
       <SideDrawer clicked={show} show={showDrawer}/>
-      <main className='content'>
+      <main className={classes.Content}>
        { props.children }
      </main>
     </Aux>

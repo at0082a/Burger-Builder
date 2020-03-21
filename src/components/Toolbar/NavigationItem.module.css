@@ -1,4 +1,4 @@
-.navigationItem {
+.NavigationItem {
   background-color: green;
   display: block;
   width: 100%;
@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-.navigationItem a {
+.NavigationItem a {
   color: white;
   text-decoration: none;
   width: 100%;
@@ -14,14 +14,14 @@
   display: block
 }
 
-.navigationItem a:hover,
-.navigationItem a:active,
-.navigationItem a.active {
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
   color: black
 }
 
 @media(min-width: 500px) {
-  .navigationItem {
+  .NavigationItem {
     background-color: green;
     height: 100%;
     display: flex;
@@ -30,7 +30,7 @@
     align-items: center
   }
   
-  .navigationItem a {
+  .NavigationItem a {
     color: white;
     text-decoration: none;
     height: 100%;
@@ -38,9 +38,9 @@
     display: block
   }
   
-  .navigationItem a:hover,
-  .navigationItem a:active,
-  .navigationItem a.active {
+  .NavigationItem a:hover,
+  .NavigationItem a:active,
+  .NavigationItem a.active {
     background-color: lightgreen;
     color: black;
     border-bottom: 4px solid #40A4C8;
