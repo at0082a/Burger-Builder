@@ -67,6 +67,7 @@ if (total === 4) {
 } else if (total > 4) {
   purchasable = false
 }
+console.log(order);
   return (
     <Aux>
       <Modal show={order} clicked={clickHandler}>
