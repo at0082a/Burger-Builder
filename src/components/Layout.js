@@ -21,7 +21,7 @@ function layout(props) {
   return (  
     <Aux>
       <Toolbar/>
-      <SideDrawer clicked={show} show={showDrawer}/>
+      <SideDrawer closed={show} show={showDrawer}/>
       <main className='content'>
        { props.children }
      </main>
