@@ -13,11 +13,9 @@ class Layout extends React.Component {
   
   sideDrawerClosedHandler () {
     this.setState({showSideDrawer: false});
-    console.log(this.state.showSideDrawer);
   }
 
   render () {
-    console.log(this.state.showSideDrawer);
     return (
       <Aux>
         <Toolbar/>
