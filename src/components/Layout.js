@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Aux from '../hoc/Aux';
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './Toolbar/SideDrawer';
-import Backdrop from './UI/BackDrop';
 import classes from './Layout.module.css';
 
-function layout(props) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [showDrawer, setShowDrawer] = useState(true);
+class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { showSideDrawer: true };
+    this.sideDrawerClosedHandler = this.sideDrawerClosedHandler.bind(this);
+  }
+  
+  sideDrawerClosedHandler () {
+    this.setState({showSideDrawer: false});
+    console.log(this.state.showSideDrawer);
+  }
 
-  const show = () => {
-    setShowDrawer(false);
-  };
-
-  return (  
-    <Aux>
-      <Toolbar/>
-      <SideDrawer clicked={show} show={showDrawer}/>
-      <main className={classes.Content}>
-       { props.children }
-     </main>
-    </Aux>
-  )
+  render () {
+    console.log(this.state.showSideDrawer);
+    return (
+      <Aux>
+        <Toolbar/>
+        <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler}/>
+        <main className={classes.Content}>
+          { this.props.children }
+        </main>
+      </Aux>
+    )
+  }
 }
 
-export default layout
+export default Layout
